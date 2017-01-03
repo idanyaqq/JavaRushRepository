@@ -21,11 +21,13 @@ public class Solution extends TimerTask {
             @Override
             public void uncaughtException(Thread t, Throwable e)
             {
-                
+                String star = t.getName().replaceAll(".","*");
+                String messame = e.getMessage().replace(t.getName(),star);
+                e = new Exception(messame,e);
+                System.out.println(e.getMessage());
+                t.setName(star);
             }
-        };
-
-        //init handler here
+        };    //init handler here
     }
 
     public void run() {
