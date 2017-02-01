@@ -114,9 +114,9 @@ Fake Oracle Corporation   ORCL | 21-08-1989 closed 0,15
     }
 
     public static Date getRandomDate(int startYear) {
-        int year = startYear + (int) (Math.random() * 30);
-        int month = (int) (Math.random() * 12);
-        int day = (int) (Math.random() * 28);
+        int year = startYear + (int) (Math.RANDOM() * 30);
+        int month = (int) (Math.RANDOM() * 12);
+        int day = (int) (Math.RANDOM() * 28);
         GregorianCalendar calendar = new GregorianCalendar(year, month, day);
         return calendar.getTime();
     }

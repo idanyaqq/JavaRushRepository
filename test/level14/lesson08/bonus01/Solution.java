@@ -1,7 +1,5 @@
 package com.javarush.test.level14.lesson08.bonus01;
 
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,83 +24,14 @@ public class Solution
 
     private static void initExceptions()
     {   //it's first exception
-        try
-        {
-            new ArrayStoreException();
-        }
-        catch(ArrayStoreException e)
-        {
-            exceptions.add(e);
-        }
-        try
-        {
-            float i = 1 / 0;
-
-        } catch (Exception e)
-        {
-            exceptions.add(e);
-        }
-        try{
-            new IOException();
-        }
-        catch (Exception e)
-        {
-            exceptions.add(e);
-        }
-        try
-        {
-            new ArrayIndexOutOfBoundsException();
-        }
-        catch(ArrayIndexOutOfBoundsException e)
-        {
-            exceptions.add(e);
-        }
-        try{
-            new IndexOutOfBoundsException();
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            exceptions.add(e);
-        }
-        try{
-            new StringIndexOutOfBoundsException();
-
-        }
-        catch(StringIndexOutOfBoundsException e)
-        {
-            exceptions.add(e);
-        }
-        try{
-            new ClassCastException();
-        }
-        catch(ClassCastException e)
-        {
-            exceptions.add(e);
-        }
-        try{
-            new RuntimeException();
-        }
-        catch(RuntimeException e)
-        {
-            exceptions.add(e);
-        }
-        try
-        {
-            new NullPointerException();
-        }
-        catch(NullPointerException e)
-        {
-            exceptions.add(e);
-        }
-        try
-        {
-            new IllegalThreadStateException();
-        }
-        catch(IllegalThreadStateException e)
-        {
-            exceptions.add(e);
-        }
-
+        try{float i = 1 / 0;}
+        catch(Exception e){exceptions.add(e);}
+        int[] a = new int[1];
+        try{a[1] = 2;}
+        catch (ArrayIndexOutOfBoundsException e){exceptions.add(e);}try{int b = a[2];}
+        catch(IndexOutOfBoundsException e){exceptions.add(e);}
+        try{String str = "1a";int val = Integer.valueOf(str);}
+        catch(NumberFormatException e){exceptions.add(e);}
         //Add your code here
 
     }
